@@ -1,22 +1,44 @@
 <template>
   <div id="app">
     <header>
-      <span>Vue.js PWA</span>
+      <span>My Offline Gallery</span>
     </header>
     <main>
-      <img src="./assets/logo.png" alt="Vue.js PWA">
-      <hello></hello>
+      <div class="wrapper">
+        <div class="cards">
+          <Card v-for="collection in collections" :key="collection.imageId" :collection="collection"/>
+        </div>
+      </div>
     </main>
   </div>
 </template>
 
 <script>
-import Hello from './components/Hello'
-
+import Card from './components/Card'
+import data from './data.json'
+import cloudinary from 'cloudinary-core'
 export default {
   name: 'app',
+  data () {
+    return {
+      cloudinary: null,
+      collections: []
+    }
+  },
+  mounted () {
+    this.cloudinary = cloudinary.Cloudinary.new({
+      cloud_name: 'christekh'
+    })
+    this.collections = data.map(this.transfrom)
+  },
   components: {
-    Hello
+    Card
+  },
+  methods: {
+    transfrom (collection) {
+      const imageUrl = this.cloudinary.url(collection.imageId, {width: 300, crop: 'fit'})
+      return Object.assign(collection, {imageUrl})
+    }
   }
 }
 </script>
