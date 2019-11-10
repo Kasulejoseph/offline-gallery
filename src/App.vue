@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     transfrom (collection) {
-      const imageUrl = this.cloudinary.url(collection.imageId, {width: 300, crop: 'fit'})
+      const imageUrl = this.cloudinary.url(collection.imageId, {width: 300, crop: 'fit', quality: 'auto'})
       return Object.assign(collection, {imageUrl})
     }
   }
@@ -60,6 +60,10 @@ main {
   margin-top: 40px;
 }
 
+.wrapper {
+  padding: 15px;
+}
+
 header {
   margin: 0;
   height: 56px;
@@ -78,4 +82,9 @@ header span {
   box-sizing: border-box;
   padding-top: 16px;
 }
+.cards {
+  column-count: 3;
+  column-gap: 1em; 
+}
+
 </style>
