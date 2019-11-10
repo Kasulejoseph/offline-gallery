@@ -17,6 +17,7 @@ export default {
   .card {
     background: #F5F5F5;
     padding: 10px;
+    display: inline-block;
     margin: 0 0 1em;
     width: 100%;
     cursor: pointer;
@@ -30,4 +31,28 @@ export default {
     display: block;
     width: 100%;
   }
+
+  @media only screen and (min-width: 500px) {
+  .cards {
+    column-count: 2;
+  }
+}
+
+@media only screen and (min-width: 700px) {
+  .cards {
+    column-count: 3;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .cards {
+    column-count: 4;
+  }
+}
+
+@media only screen and (min-width: 1100px) {
+  .cards {
+    column-count: 5;
+  }
+}
 </style>
