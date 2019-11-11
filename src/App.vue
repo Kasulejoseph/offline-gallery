@@ -36,7 +36,7 @@ export default {
   },
   methods: {
     transfrom (collection) {
-      const imageUrl = this.cloudinary.url(collection.imageId, {width: 300, crop: 'fit', quality: 'auto'})
+      const imageUrl = this.cloudinary.url(collection.imageId, {width: 300, crop: 'fit', quality: 'auto', secure: true})
       return Object.assign(collection, {imageUrl})
     }
   }
@@ -68,7 +68,7 @@ header {
   margin: 0;
   height: 56px;
   padding: 0 16px 0 24px;
-  background-color: #35495E;
+  background-color: #000;
   color: #ffffff;
 }
 
