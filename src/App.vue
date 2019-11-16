@@ -27,7 +27,7 @@ export default {
   },
   mounted () {
     this.cloudinary = cloudinary.Cloudinary.new({
-      cloud_name: 'christekh'
+      cloud_name: process.env.VUE_APP_SECRET
     })
     this.collections = data.map(this.transfrom)
   },
