@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <header>
-      <span>My Offline Gallery</span>
+      <span>The Offline Gallery</span>
     </header>
     <main>
       <div class="wrapper">
@@ -57,7 +57,7 @@ body {
 
 main {
   text-align: center;
-  margin-top: 40px;
+  /* margin-top: 40px; */
 }
 
 .wrapper {

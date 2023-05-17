@@ -19,9 +19,10 @@ export default {
     padding: 10px;
     display: inline-block;
     margin: 0 0 1em;
-    width: 100%;
+    /* width: 100%; */
     cursor: pointer;
     transition: all 100ms ease-in-out;
+    height: 30rem;
   }
   .card:hover {
     transform: translateY(-0.5em);
@@ -30,6 +31,17 @@ export default {
   img {
     display: block;
     width: 100%;
+    height: 14rem;
+  }
+
+  .card-content {
+    width: auto;
+  }
+
+  @media (max-width: 767px) {
+  .cards {
+    column-count: 1;
+  }
   }
 
   @media only screen and (min-width: 500px) {
@@ -52,7 +64,7 @@ export default {
 
 @media only screen and (min-width: 1100px) {
   .cards {
-    column-count: 5;
+    column-count: 4;
   }
 }
 </style>
